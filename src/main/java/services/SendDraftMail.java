@@ -42,7 +42,7 @@ public class SendDraftMail {
     @FindBy(xpath = "//span[@class='mail-MessageSnippet-Item mail-MessageSnippet-Item_subject']")
     private List<WebElement> listOfLetters;
 
-    public LogOut sendDraftLetter() throws InterruptedException {
+    public LogOut sendDraftLetter(){
 
 
         draftLetters.click();
@@ -69,6 +69,5 @@ public class SendDraftMail {
         }
         return false;
     }
-
 
 }

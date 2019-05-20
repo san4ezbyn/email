@@ -24,7 +24,7 @@ public class TestsRunner {
     private LogOut logOut;
     private Finish finish;
 
-    private static String RECEIVER = "fake@gmale.com";
+    private static String RECEIVER = "adakyko@gmail.com";//"fake@gmale.com";
     private static String TOPIC = "AT-WD task";
     private static String TEXT = "SOME TEXT FOR LETTER";
 
@@ -56,7 +56,7 @@ public class TestsRunner {
     }
 
     @Test(dependsOnMethods = "verifyAndSendDraft")
-    private void checkFoldersDraftAndSentForLetter() throws InterruptedException {
+    private void checkFoldersDraftAndSentForLetter() {
         logOut = sendDraftMail.sendDraftLetter();
         Assert.assertTrue(sendDraftMail.checkLetterInSentLettersFolder());
     }
