@@ -49,7 +49,6 @@ public class SendDraftMail {
         Assert.assertFalse(checkDraftFolderIsEmpty());
         sentLetters.click();
         checkLetterInSentLettersFolder();
-        System.out.println( checkLetterInSentLettersFolder());
 
         return new LogOut(this.driver);
     }
