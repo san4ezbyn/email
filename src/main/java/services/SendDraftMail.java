@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -38,18 +39,17 @@ public class SendDraftMail {
     @FindBy(xpath = "//span[@class='mail-MessageSnippet-Item mail-MessageSnippet-Item_body js-message-snippet-body']")
     private List<WebElement> listOfDraftLetter;
 
-    @FindBy(xpath = "mail-MessageSnippet-FromText")
+    @FindBy(xpath = "//span[@class='mail-MessageSnippet-Item mail-MessageSnippet-Item_subject']")
     private List<WebElement> listOfLetters;
 
-    public LogOut sendDraftLetter(){
+    public LogOut sendDraftLetter() throws InterruptedException {
 
 
         draftLetters.click();
-        checkDraftFolderIsEmpty();
+        Assert.assertFalse(checkDraftFolderIsEmpty());
         sentLetters.click();
         checkLetterInSentLettersFolder();
-
-
+        System.out.println( checkLetterInSentLettersFolder());
 
         return new LogOut(this.driver);
     }

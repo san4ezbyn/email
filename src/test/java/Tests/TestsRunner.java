@@ -56,8 +56,9 @@ public class TestsRunner {
     }
 
     @Test(dependsOnMethods = "verifyAndSendDraft")
-    private void checkFoldersDraftAndSentForLetter() {
+    private void checkFoldersDraftAndSentForLetter() throws InterruptedException {
         logOut = sendDraftMail.sendDraftLetter();
+        Assert.assertTrue(sendDraftMail.checkLetterInSentLettersFolder());
     }
 
     @Test(dependsOnMethods = "checkFoldersDraftAndSentForLetter")
