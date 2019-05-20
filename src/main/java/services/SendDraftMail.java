@@ -8,11 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class SendMail {
+public class SendDraftMail {
     WebDriverWait wait;
     WebDriver driver;
 
-    public SendMail(WebDriver driver) {
+    public SendDraftMail(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 30, 60);
         PageFactory.initElements(this.driver, this);
@@ -70,5 +70,6 @@ public class SendMail {
         }
         return false;
     }
+
 
 }

@@ -15,12 +15,12 @@ import static java.lang.System.setProperty;
 public class TestsRunner {
     private static WebDriver driver;
     private static String URL = "https://passport.yandex.by";
-    private static String STARTPAGE_TITLE = "xxx";
-    private static String IN_APP_PAGE_TITLE = "zzz";
+    private static String PAGE_TITLE = "Яндекс";
+
 
     private LaunchAndLogIn launchAndLogIn;
     private NewLetter newLetter;
-    private SendMail draft;
+    private SendDraftMail sendDraftMail;
     private LogOut logOut;
     private Finish finish;
 
@@ -45,30 +45,29 @@ public class TestsRunner {
     }
 
     @Test
-    private void newLetterSavedInDraft(){
-        draft=newLetter.newLetter(RECEIVER, TOPIC, TEXT);
-       Assert.assertTrue(newLetter.findDraft());
-
+    private void newLetterSavedInDraft() {
+        sendDraftMail = newLetter.newLetter(RECEIVER, TOPIC, TEXT);
+        Assert.assertTrue(newLetter.findDraft());
     }
+
     @Test
-    private void verifyAndSendDraft(){
+    private void verifyAndSendDraft() {
         Assert.assertTrue(newLetter.verifyDraftIsCorrect(RECEIVER, TOPIC, TEXT));
     }
+
     @Test(dependsOnMethods = "verifyAndSendDraft")
-    private void checkFoldersDraftAndSentForLetter(){
-       logOut=draft.sendDraftLetter();
-//       Assert.assertTrue(draft.checkDraftFolderIsEmpty());
-//       Assert.assertTrue(draft.checkLetterInSentLettersFolder());
+    private void checkFoldersDraftAndSentForLetter() {
+        logOut = sendDraftMail.sendDraftLetter();
     }
+
     @Test(dependsOnMethods = "checkFoldersDraftAndSentForLetter")
-    private void logingOut(){
-        finish=logOut.logOut();
-        System.out.println(logOut.getStartPageTitel());
-        Assert.assertEquals(logOut.getStartPageTitel(),"Яндекс");
+    private void logingOut() {
+        finish = logOut.logOut();
+        Assert.assertEquals(logOut.getStartPageTitel(), PAGE_TITLE);
     }
 
     @AfterClass
     public void tearDown() {
-     driver.close();
+        driver.close();
     }
 }

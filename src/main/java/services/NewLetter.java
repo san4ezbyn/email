@@ -37,10 +37,6 @@ public class NewLetter {
     @FindBy(xpath = "//div[@class='cke_wysiwyg_div cke_reset cke_enable_context_menu cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']")
     private WebElement textField;
 
-
-    @FindBy(xpath = "//span[contains(text(),'Отправленные')]")
-    private WebElement sentLetters;
-
     @FindBy(xpath = "mail-MessageSnippet-FromText")
     private List<WebElement> listOfLetters;
 
@@ -66,8 +62,8 @@ public class NewLetter {
     private WebElement sendLetter;
 
 
-    public SendMail newLetter(String receiver, String topic, String text) {
-        System.out.println("TEST check");
+    public SendDraftMail newLetter(String receiver, String topic, String text) {
+
         correctUser.click();
         pochtaButton.click();
         writeNewLetter.click();
@@ -77,11 +73,7 @@ public class NewLetter {
         saveAsDraft.click();
         draftLetters.click();
 
-
-        /*sendLetter.click();
-        sentLetters.click();*/
-
-        return new SendMail(this.driver);
+        return new SendDraftMail(this.driver);
     }
 
     public boolean findLetter() {
@@ -110,7 +102,7 @@ public class NewLetter {
             if (draft.getText().contains("AT-WD task")) {
                 draft.click();
                 if (receiverField.getText().contains(receiver) || checkTopic.getText().contains(topic) || checkText.getText().contains(text)) {
-                   sendLetter.click();
+                    sendLetter.click();
 
                     return true;
                 }
