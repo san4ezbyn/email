@@ -30,11 +30,7 @@ public class LogOut {
 
         userAccount.click();
 
-        /*Select dropdown = new Select(driver.findElement(By.xpath("//a[@data-metric='Sign out of Yandex services'][contains(text(),'Выйти из сервисов Яндекса')]")));
-        dropdown.selectByVisibleText("Выйти из сервисов Яндекса");*/
-
-
-        leaveYabdexServices.click();
+       leaveYabdexServices.click();
 
         return new Finish(this.driver);
     }
