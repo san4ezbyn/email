@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cd2545a-9d6e-4274-840d-2d2c27935c1a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/LaunchAndLogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/LaunchAndLogIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/LogOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/LogOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/NewLetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/NewLetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/SendDraftMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/SendDraftMail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Tests/TestsRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/TestsRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/LaunchAndLogIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/LaunchAndLogIn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/LogOut.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/LogOut.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/NewLetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/NewLetter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/SendDraftMail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/SendDraftMail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Tests/TestsRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Tests/TestsRunner.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,24 +26,26 @@
     <session id="-1776991503">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="17" />
-          <entry key="java" value="3002" />
+          <entry key="java" value="4038" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3002" />
+          <entry key="JAVA" value="4038" />
           <entry key="PLAIN_TEXT" value="17" />
           <entry key="XML" value="8" />
         </counts>
@@ -58,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/services/LaunchAndLogIn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="160">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/services/NewLetter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1030">
-              <caret line="99" column="85" lean-forward="true" selection-start-line="99" selection-start-column="85" selection-end-line="99" selection-end-column="85" />
+            <state relative-caret-position="935">
+              <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,12 +93,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Tests/TestsRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="66" column="2" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="2" />
+            <state relative-caret-position="415">
+              <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1651#1652#0" expanded="true" />
-                <element signature="e#1739#1740#0" expanded="true" />
+                <element signature="e#2576#2577#0" expanded="true" />
+                <element signature="e#2606#2607#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,12 +107,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/services/LogOut.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1004#1005#0" expanded="true" />
-                <element signature="e#1049#1050#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,8 +119,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/services/Finish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="272">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,8 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/services/SendDraftMail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="313">
+              <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,12 +157,12 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/services/CheckLogin.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/LaunchAndLogIn.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/Draft.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/SendMail.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/Finish.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/LaunchAndLogIn.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/NewLetter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/Finish.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/SendDraftMail.java" />
         <option value="$PROJECT_DIR$/src/test/java/Tests/TestsRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/LogOut.java" />
@@ -168,8 +177,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-1928" />
+    <option name="y" value="4" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -179,8 +188,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,11 +247,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558363940501" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558510638337" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -294,41 +303,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestsRunner - 2019.05.20 at 16h 42m 53s.xml">
+    <history-entry file="TestsRunner - 2019.05.22 at 09h 51m 37s.xml">
       <configuration name="TestsRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestsRunner - 2019.05.20 at 16h 46m 32s.xml">
+    <history-entry file="TestsRunner - 2019.05.22 at 09h 55m 53s.xml">
       <configuration name="TestsRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestsRunner - 2019.05.20 at 16h 51m 14s.xml">
+    <history-entry file="TestsRunner - 2019.05.22 at 10h 04m 30s.xml">
       <configuration name="TestsRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestsRunner - 2019.05.20 at 16h 55m 37s.xml">
+    <history-entry file="TestsRunner - 2019.05.22 at 10h 05m 32s.xml">
       <configuration name="TestsRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestsRunner - 2019.05.20 at 16h 57m 01s.xml">
+    <history-entry file="TestsRunner - 2019.05.22 at 10h 16m 25s.xml">
       <configuration name="TestsRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestsRunner - 2019.05.20 at 16h 58m 34s.xml">
+    <history-entry file="TestsRunner - 2019.05.22 at 10h 17m 28s.xml">
       <configuration name="TestsRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestsRunner - 2019.05.20 at 16h 59m 44s.xml">
+    <history-entry file="TestsRunner - 2019.05.22 at 10h 27m 18s.xml">
       <configuration name="TestsRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestsRunner - 2019.05.20 at 17h 03m 31s.xml">
+    <history-entry file="TestsRunner - 2019.05.22 at 10h 30m 09s.xml">
       <configuration name="TestsRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestsRunner - 2019.05.20 at 17h 05m 27s.xml">
+    <history-entry file="TestsRunner - 2019.05.22 at 10h 32m 18s.xml">
       <configuration name="TestsRunner" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestsRunner - 2019.05.20 at 17h 08m 43s.xml">
+    <history-entry file="TestsRunner - 2019.05.22 at 10h 34m 10s.xml">
       <configuration name="TestsRunner" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="4" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25746268" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26279318" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -337,8 +347,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -356,7 +366,7 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26012793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -364,7 +374,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -392,15 +402,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/services/LogOut.java</url>
-          <line>30</line>
+          <line>29</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/services/LogOut.java</url>
-          <line>32</line>
+          <url>file://$PROJECT_DIR$/src/main/java/services/NewLetter.java</url>
+          <line>98</line>
           <properties />
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/NewLetter.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/NewLetter.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -446,9 +468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="e#2034#2035#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -456,20 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
           <caret line="904" selection-start-line="904" selection-end-line="904" />
-          <folding>
-            <element signature="e#32680#32681#0" expanded="true" />
-            <element signature="e#32726#32727#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/Finish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -480,10 +485,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/SendDraftMail.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/LaunchAndLogIn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="160">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/Finish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -492,18 +507,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/services/NewLetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1030">
-          <caret line="99" column="85" lean-forward="true" selection-start-line="99" selection-start-column="85" selection-end-line="99" selection-end-column="85" />
+        <state relative-caret-position="935">
+          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/LaunchAndLogIn.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/SendDraftMail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="313">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -512,24 +527,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Tests/TestsRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="66" column="2" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="2" />
+        <state relative-caret-position="415">
+          <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1651#1652#0" expanded="true" />
-            <element signature="e#1739#1740#0" expanded="true" />
+            <element signature="e#2576#2577#0" expanded="true" />
+            <element signature="e#2606#2607#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/services/LogOut.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1049#1050#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -10,6 +10,8 @@ import java.util.List;
 
 public class NewLetter {
 
+    private String NEW_LETTER_TOPIC = "AT-WD-№";
+
     WebDriverWait wait;
     WebDriver driver;
 
@@ -19,7 +21,7 @@ public class NewLetter {
         PageFactory.initElements(this.driver, this);
     }
 
-    @FindBy(xpath = "//span[@class='user-account__name user-account__name_hasAccentLetter']")
+    @FindBy(xpath = "//div[@class='user2']")
     private static WebElement correctUser;
 
     @FindBy(xpath = "//a[contains(text(),'Почта')]")
@@ -31,17 +33,14 @@ public class NewLetter {
     @FindBy(xpath = "//div[@name='to']")
     private WebElement receiverField;
 
-    @FindBy(xpath = "//input[@class='mail-Compose-Field-Input-Controller js-compose-field js-editor-tabfocus-prev']")
+    @FindBy(xpath = "//div[@class='mail-Compose-Field-Input']/input[@type='text']")
     private WebElement topicField;
 
-    @FindBy(xpath = "//div[@class='cke_wysiwyg_div cke_reset cke_enable_context_menu cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']")
+    @FindBy(xpath = "//div[@role='textbox']")
     private WebElement textField;
 
     @FindBy(xpath = "mail-MessageSnippet-FromText")
     private List<WebElement> listOfLetters;
-
-    @FindBy(xpath = "//span[@class='mail-NestedList-Item-Name']")
-    private List<WebElement> categoryList;
 
     @FindBy(xpath = "//span[contains(text(),'как черновик')]")
     private WebElement saveAsDraft;
@@ -49,10 +48,10 @@ public class NewLetter {
     @FindBy(xpath = "//span[contains(text(),'Черновики')]")
     private WebElement draftLetters;
 
-    @FindBy(xpath = "//span[@class='mail-MessageSnippet-Item mail-MessageSnippet-Item_body js-message-snippet-body']")
+    @FindBy(xpath = "//div[@class='mail-MessageSnippet-Wrapper']")
     private List<WebElement> listOfDraftLetter;
 
-    @FindBy(xpath = "//input[@value='AT-WD task']")
+    @FindBy(xpath = "//span[@title][contains(text(),'AT-WD-№')]")
     private WebElement checkTopic;
 
     @FindBy(xpath = "//div[@class='cke_contents cke_reset']//*[contains(text(),'SOME TEXT FOR LETTER')]")
@@ -60,7 +59,6 @@ public class NewLetter {
 
     @FindBy(xpath = "//span[contains(text(),'Отправить')]")
     private WebElement sendLetter;
-
 
     public SendDraftMail newLetter(String receiver, String topic, String text) {
 
@@ -79,7 +77,7 @@ public class NewLetter {
     public boolean findLetter() {
         for (WebElement letter : listOfLetters) {
             letter.getText();
-            if (letter.getText().contains("AT-WD task")) {
+            if (letter.getText().contains(NEW_LETTER_TOPIC)) {
 
                 return true;
             }
@@ -89,7 +87,7 @@ public class NewLetter {
 
     public boolean findDraft() {
         for (WebElement draft : listOfDraftLetter) {
-            if (draft.getText().contains("AT-WD task")) {
+            if (draft.getText().contains(NEW_LETTER_TOPIC)) {
 
                 return true;
             }
@@ -99,18 +97,13 @@ public class NewLetter {
 
     public boolean verifyDraftIsCorrect(String receiver, String topic, String text) {
         for (WebElement draft : listOfDraftLetter) {
-            if (draft.getText().contains("AT-WD task")) {
+            if (draft.getText().contains(topic) || draft.getText().contains(receiver) || draft.getText().contains(text)) {
                 draft.click();
-                if (receiverField.getText().contains(receiver) || checkTopic.getText().contains(topic) || checkText.getText().contains(text)) {
-                    sendLetter.click();
+                sendLetter.click();
 
-                    return true;
-                }
+                return true;
             }
-
         }
         return false;
     }
-
-
 }

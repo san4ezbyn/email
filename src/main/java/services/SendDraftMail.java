@@ -1,5 +1,6 @@
 package services;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,16 +19,17 @@ public class SendDraftMail {
         wait = new WebDriverWait(driver, 30, 60);
         PageFactory.initElements(this.driver, this);
     }
+
     @FindBy(xpath = "//span[contains(text(),'Отправить')]")
     private WebElement sendLetter;
 
     @FindBy(xpath = "//div[@name='to']")
     private WebElement receiverField;
 
-    @FindBy(xpath = "//input[@class='mail-Compose-Field-Input-Controller js-compose-field js-editor-tabfocus-prev']")
+    @FindBy(xpath = "//div[@class='mail-Compose-Field-Input']/input[@type='text']")
     private WebElement topicField;
 
-    @FindBy(xpath = "//div[@class='cke_wysiwyg_div cke_reset cke_enable_context_menu cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']")
+    @FindBy(xpath = "//div[@role='textbox']")
     private WebElement textField;
 
     @FindBy(xpath = "//span[contains(text(),'Отправленные')]")
@@ -36,38 +38,26 @@ public class SendDraftMail {
     @FindBy(xpath = "//span[contains(text(),'Черновики')]")
     private WebElement draftLetters;
 
-    @FindBy(xpath = "//span[@class='mail-MessageSnippet-Item mail-MessageSnippet-Item_body js-message-snippet-body']")
-    private List<WebElement> listOfDraftLetter;
-
-    @FindBy(xpath = "//span[@class='mail-MessageSnippet-Item mail-MessageSnippet-Item_subject']")
-    private List<WebElement> listOfLetters;
-
-    public LogOut sendDraftLetter(){
-
+    public LogOut checkDraftLettersFolder(String topic) {
 
         draftLetters.click();
-        Assert.assertFalse(checkDraftFolderIsEmpty());
+        Assert.assertFalse(checkFolders(topic));
+                return new LogOut(this.driver);
+    }
+    public LogOut checkSentLettersFolder(String topic) {
         sentLetters.click();
-        checkLetterInSentLettersFolder();
+        Assert.assertFalse(checkFolders(topic));
 
         return new LogOut(this.driver);
     }
 
-    public boolean checkDraftFolderIsEmpty(){
-       for (WebElement draftLetter:listOfDraftLetter){
-           if (draftLetter.getText().contains("AT-WD task")){
-               return false;
-           }
-       }
-        return true;
-    }
-    public boolean checkLetterInSentLettersFolder(){
-        for (WebElement letter:listOfLetters){
-            if (letter.getText().contains("AT-WD task")){
-                return true;
+    public boolean checkFolders(String topic) {
+        List<WebElement> listOfLetters = driver.findElements(By.xpath("//div[@class='mail-MessageSnippet-Content']"));
+        for (WebElement draftLetter : listOfLetters) {
+            if (draftLetter.getText().contains(topic)) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
-
 }

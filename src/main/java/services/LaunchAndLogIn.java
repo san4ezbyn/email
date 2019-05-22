@@ -16,21 +16,19 @@ public class LaunchAndLogIn {
 
     private static String LOGIN = "alexbyn";
     private static String PASSWORD = "lollipop18";
-    private static String USER_ACCOUNT="alexbyn";
+    private static String USER_ACCOUNT = "alexbyn";
 
     @FindBy(xpath = "//input[@name='login']")
     private static WebElement loginField;
 
-    @FindBy(xpath = "//button[@class='control button2 button2_view_classic button2_size_l button2_theme_action button2_width_max button2_type_submit passp-form-button']")
+    @FindBy(xpath = "//button[@type='submit']")
     private static WebElement loginButtonEnter;
 
     @FindBy(xpath = "//input[@autocomplete='current-password']")
-    //@FindBy(xpath = "//div[@class='passp-form-field ']")
     private static WebElement passwordField;
 
-    @FindBy(xpath = "//span[@class='user-account__name user-account__name_hasAccentLetter']")
+    @FindBy(xpath = "//div[@class='user2']")
     private static WebElement correctUser;
-
 
     public LaunchAndLogIn(WebDriver driver) {
         this.driver = driver;
@@ -48,9 +46,10 @@ public class LaunchAndLogIn {
         return new NewLetter(this.driver);
     }
 
-    public boolean userAccount(){
-        if(correctUser.getText().equalsIgnoreCase(USER_ACCOUNT)){
+    public boolean userAccount() {
+        if (correctUser.getText().equalsIgnoreCase(USER_ACCOUNT)) {
             return true;
-        }return false;
+        }
+        return false;
     }
 }

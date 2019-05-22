@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import services.*;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.System.setProperty;
@@ -16,16 +17,13 @@ public class TestsRunner {
     private static WebDriver driver;
     private static String URL = "https://passport.yandex.by";
     private static String PAGE_TITLE = "Яндекс";
-
-
     private LaunchAndLogIn launchAndLogIn;
     private NewLetter newLetter;
     private SendDraftMail sendDraftMail;
     private LogOut logOut;
     private Finish finish;
-
     private static String RECEIVER = "fake@gmale.com";
-    private static String TOPIC = "AT-WD task";
+    private static String TOPIC = String.format("AT-WD-№-%s", new Random().nextInt(100));
     private static String TEXT = "SOME TEXT FOR LETTER";
 
     @BeforeClass
@@ -48,6 +46,7 @@ public class TestsRunner {
     private void newLetterSavedInDraft() {
         sendDraftMail = newLetter.newLetter(RECEIVER, TOPIC, TEXT);
         Assert.assertTrue(newLetter.findDraft());
+        System.out.println("TOPIC " + TOPIC);
     }
 
     @Test
@@ -56,19 +55,25 @@ public class TestsRunner {
     }
 
     @Test(dependsOnMethods = "verifyAndSendDraft")
-    private void checkFoldersDraftAndSentForLetter() {
-        logOut = sendDraftMail.sendDraftLetter();
-        Assert.assertTrue(sendDraftMail.checkLetterInSentLettersFolder());
+    private void checkDraftFolder() {
+        logOut = sendDraftMail.checkDraftLettersFolder(TOPIC);
+        Assert.assertFalse(sendDraftMail.checkFolders(TOPIC));
     }
 
-    @Test(dependsOnMethods = "checkFoldersDraftAndSentForLetter")
+    @Test(dependsOnMethods = "checkDraftFolder")
+    private void checkSentLetterFolder() {
+        logOut = sendDraftMail.checkSentLettersFolder(TOPIC);
+        Assert.assertFalse(sendDraftMail.checkFolders(TOPIC));
+    }
+
+    @Test(dependsOnMethods = "checkSentLetterFolder")
     private void logingOut() {
         finish = logOut.logOut();
-//        Assert.assertEquals(logOut.getStartPageTitel(), PAGE_TITLE);
+        Assert.assertEquals(logOut.getStartPageTitel(), PAGE_TITLE);
     }
 
     @AfterClass
     public void tearDown() {
-        //driver.close();
+        driver.close();
     }
 }
