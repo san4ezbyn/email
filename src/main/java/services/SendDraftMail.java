@@ -41,12 +41,13 @@ public class SendDraftMail {
     public LogOut checkDraftLettersFolder(String topic) {
 
         draftLetters.click();
-        Assert.assertFalse(checkFolders(topic));
-                return new LogOut(this.driver);
+        checkFolders(topic);
+        return new LogOut(this.driver);
     }
+
     public LogOut checkSentLettersFolder(String topic) {
         sentLetters.click();
-        Assert.assertFalse(checkFolders(topic));
+        checkFolders(topic);
 
         return new LogOut(this.driver);
     }

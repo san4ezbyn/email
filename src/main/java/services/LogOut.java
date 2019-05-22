@@ -22,13 +22,11 @@ public class LogOut {
     @FindBy(xpath = "//div[@class='mail-User-Name'][contains(text(),'alexbyn')]")
     private WebElement userAccount;
 
-    @FindBy(xpath = "//a[@data-metric='Sign out of Yandex services'][contains(text(),'Выйти из сервисов Яндекса')]")
-    private WebElement leaveYandexServices;
-
     public Finish logOut() {
 
         userAccount.click();
-        driver.findElement(By.xpath("//a[@data-metric='Sign out of Yandex services'][contains(text(),'Выйти из сервисов Яндекса')]")).click();
+        WebElement leaveYandexServices = driver.findElement(By.xpath("//a[@data-metric='Sign out of Yandex services'][contains(text(),'Выйти из сервисов Яндекса')]"));
+        leaveYandexServices.click();
         return new Finish(this.driver);
     }
 
