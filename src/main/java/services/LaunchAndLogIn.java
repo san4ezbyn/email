@@ -8,15 +8,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 public class LaunchAndLogIn {
 
     WebDriverWait wait;
     WebDriver driver;
 
-    private static String LOGIN = "alexbyn";
-    private static String PASSWORD = "lollipop18";
-    private static String USER_ACCOUNT = "alexbyn";
+    private static final String LOGIN = "alexbyn";
+    private static final String PASSWORD = "lollipop18";
+    private static final String USER_ACCOUNT = "alexbyn";
+    private static final int TIME_OUT_SECONDS = 45;
+    private static final int SLEEP_MILLIS = 120;
 
     @FindBy(xpath = "//input[@name='login']")
     private static WebElement loginField;
@@ -30,9 +31,10 @@ public class LaunchAndLogIn {
     @FindBy(xpath = "//div[@class='user2']")
     private static WebElement correctUser;
 
+
     public LaunchAndLogIn(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 30, 120);
+        wait = new WebDriverWait(driver, TIME_OUT_SECONDS, SLEEP_MILLIS);
         PageFactory.initElements(this.driver, this);
     }
 

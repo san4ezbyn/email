@@ -4,61 +4,53 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NewLetter {
 
-    private String NEW_LETTER_TOPIC = "AT-WD-№";
+    private static final String NEW_LETTER_TOPIC = "AT-WD-№";
 
-    WebDriverWait wait;
     WebDriver driver;
-
-    public NewLetter(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 30, 60);
-        PageFactory.initElements(this.driver, this);
-    }
 
     @FindBy(xpath = "//div[@class='user2']")
     private static WebElement correctUser;
 
     @FindBy(xpath = "//a[contains(text(),'Почта')]")
-    private WebElement pochtaButton;
+    private static WebElement pochtaButton;
 
     @FindBy(xpath = "//span[@class='mail-ComposeButton-Text'][contains(text(),'Написать')]")
-    private WebElement writeNewLetter;
+    private static WebElement writeNewLetter;
 
     @FindBy(xpath = "//div[@name='to']")
-    private WebElement receiverField;
+    private static WebElement receiverField;
 
     @FindBy(xpath = "//div[@class='mail-Compose-Field-Input']/input[@type='text']")
-    private WebElement topicField;
+    private static WebElement topicField;
 
     @FindBy(xpath = "//div[@role='textbox']")
-    private WebElement textField;
-
-    @FindBy(xpath = "mail-MessageSnippet-FromText")
-    private List<WebElement> listOfLetters;
+    private static WebElement textField;
 
     @FindBy(xpath = "//span[contains(text(),'как черновик')]")
-    private WebElement saveAsDraft;
+    private static WebElement saveAsDraft;
 
     @FindBy(xpath = "//span[contains(text(),'Черновики')]")
-    private WebElement draftLetters;
+    private static WebElement draftLetters;
 
     @FindBy(xpath = "//div[@class='mail-MessageSnippet-Wrapper']")
-    private List<WebElement> listOfDraftLetter;
-
-    @FindBy(xpath = "//span[@title][contains(text(),'AT-WD-№')]")
-    private WebElement checkTopic;
-
-    @FindBy(xpath = "//div[@class='cke_contents cke_reset']//*[contains(text(),'SOME TEXT FOR LETTER')]")
-    private WebElement checkText;
+    private static List<WebElement> listOfDraftLetter;
 
     @FindBy(xpath = "//span[contains(text(),'Отправить')]")
-    private WebElement sendLetter;
+    private static WebElement sendLetter;
+
+    @FindBy(xpath = "//div[@data-nb='popup']//*[contains(text(),'Сохранить и перейти')]")
+    private static WebElement acceptPopUp;
+
+    public NewLetter(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(this.driver, this);
+    }
 
     public SendDraftMail newLetter(String receiver, String topic, String text) {
 
@@ -68,21 +60,16 @@ public class NewLetter {
         receiverField.sendKeys(receiver);
         topicField.sendKeys(topic);
         textField.sendKeys(text);
-        saveAsDraft.click();
+        //saveAsDraft.click();
+        draftLetters.click();
+
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(0));
+        acceptPopUp.click();
+        // driver.switchTo().window(tabs2.get(1));
         draftLetters.click();
 
         return new SendDraftMail(this.driver);
-    }
-
-    public boolean findLetter() {
-        for (WebElement letter : listOfLetters) {
-            letter.getText();
-            if (letter.getText().contains(NEW_LETTER_TOPIC)) {
-
-                return true;
-            }
-        }
-        return false;
     }
 
     public boolean findDraft() {

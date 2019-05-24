@@ -15,16 +15,17 @@ import static java.lang.System.setProperty;
 
 public class TestsRunner {
     private static WebDriver driver;
-    private static String URL = "https://passport.yandex.by";
-    private static String PAGE_TITLE = "Яндекс";
-    private LaunchAndLogIn launchAndLogIn;
-    private NewLetter newLetter;
+    private static final String URL = "https://passport.yandex.by";
+    private static final String PAGE_TITLE = "Яндекс";
+    private static LaunchAndLogIn launchAndLogIn;
+    private static NewLetter newLetter;
     private SendDraftMail sendDraftMail;
     private LogOut logOut;
     private Finish finish;
-    private static String RECEIVER = "fake@gmale.com";
-    private static String TOPIC = String.format("AT-WD-№-%s", new Random().nextInt(100));
-    private static String TEXT = "SOME TEXT FOR LETTER";
+    private static final String RECEIVER = "fake@gmale.com";
+    private static final String TOPIC = String.format("AT-WD-№-%s", new Random().nextInt(100));
+    private static final String TEXT = "SOME TEXT FOR LETTER";
+    public static final int IMPLICIT_WAIT=60;
 
     @BeforeClass
     private void init() throws InterruptedException {
@@ -32,7 +33,7 @@ public class TestsRunner {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(URL);
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
         launchAndLogIn = new LaunchAndLogIn(driver);
     }
 
